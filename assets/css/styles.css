@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.containerApp {
+    background-color: #fbfbfb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    padding: 30px;
+    width: 100%;
+    animation: show .5s ease;
+}
+
+.containerApp__row {
+    justify-content: center;
+}
+
+
+/************************************************************ 
+CARD CONTAINER 
+*************************************************************/
+.containerApp__card {
+    border: 2px solid rgba(0, 0, 0, .125);
+    box-shadow: 0px 4px 5px 1px rgba(229,229,229,1);
+    -webkit-box-shadow: 0px 4px 5px 1px rgba(229,229,229,1);
+    -moz-box-shadow: 0px 3px 2px 1px rgba(229,229,229,1);
+    height: auto;
+    width: 500px;
+}
+
+.containerApp__header {
+    background-color: #fbfbfb;
+    padding: 8px 18px;
+}
+
+.containerApp__userImg {
+    background: no-repeat center/contain url("/Ale.jpg");
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;
+
+}
+
+.containerApp__userData {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 10px;
+}
+
+.containerApp__userData> :nth-child(1),
+.containerApp__userData> :nth-child(2)  {
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 3px;
+}
+
+.containerApp__userData> :nth-child(2) {
+    font-weight: 400;
+}
+
+.swiper {
+    height: 300px;
+}
+
+.swiper-slide {
+    background: #fff;
+    font-size: 18px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/************************************************************ 
+ICONS CONTAINER 
+*************************************************************/
+
+@keyframes heartBeat {
+    from { 
+        transform: none; 
+    }
+    50% { 
+        transform: scale(1.3); 
+    }
+    to { 
+        transform: none; 
+    }
+}
+.containerApp__icons{
+    display: flex;
+    padding: 5px 0;
+}
+.containerApp__icons p {
+    margin: 0 3px;
+    padding: 3px;
+    width: 1.5rem;
+}
+.containerApp__icons i{
+    font-size: 1.1rem;
+}
+#heart__icon{
+    cursor: pointer;
+}
+.heartBeat{
+    color: #ED4956;
+    animation: heartBeat 0.4s ease;
+}
+
+/************************************************************
+TITTLE CONTAINER
+*************************************************************/
+.containerApp__tittleAndComments{
+    padding: 8px 0;
+}
+.containerApp__tittleAndComments strong{
+    color: #000000;
+    font-size: .9rem;
+    font-weight: 500;
+}
+.containerApp__tittleAndComments span{
+    color: #000000; 
+    font-size: .8rem;
+    font-weight: 400;
+    text-align:justify ;
+}
+/************************************************************
+POST COOMENT CONTAINER
+*************************************************************/
+.containerApp__postComment{
+    background-color: #F1F1F1;
+    padding: 4px;
+}
+.containerApp__postComment--form{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.containerApp__postComment--form input[type="text"]{
+    background-color: transparent;
+    border: transparent;
+    color: #000000;
+    font-size: .7rem;
+    font-weight: 600;
+    outline: none;
+    padding: 2px;
+    width: 90%;
+}
+.containerApp__postComment--form button{
+    background-color: transparent;
+    border: transparent;
+    color: #3D8AFF;
+    font-size: .9rem;
+    font-weight: 500;
+    outline: none;
+}
+/************************************************************
+LOADING CONTAINER
+*************************************************************/
+
+@keyframes loadingContainer {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    60%,
+    80% {
+        width: 100%;
+    }
+}
+
+.loadingContainer {
+    color: #fbfbfb;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: absolute;
+}
+
+.loadingContainer h1:before {
+    content: 'Loading...';
+    color: #0b0248;
+    border-right: 2px solid #0b0248;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    animation: loadingContainer 4s linear infinite;
+    width: 0;
+}
